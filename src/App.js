@@ -1,6 +1,6 @@
 //*💡 import the useReducer hook, our application's reducer and initialState object 
 
-import React, { useReducer, useState } from "react";
+import React, { useReducer } from "react";
 import reducer, { initialState } from "./reducers";
 
 import TotalDisplay from './components/TotalDisplay';
