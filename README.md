@@ -1,4 +1,24 @@
 # Notes
+## Links
+* 🎥 [GP](https://youtu.be/O2fhyPyyJBo)
+* 📝 [MP](https://github.com/nora-exe/web-module-project-reducer/tree/nora-corser)
+
+## Key Concepts:
+* [Business Logic](https://simplicable.com/new/business-logic) - The outline of the data and types of manipulations of data needed to create a working application
+* [Application State](https://www.youtube.com/watch?v=7ilYJAG-_Ug) - Data that is used across all of our application's components.
+* [Component State](https://stackoverflow.com/questions/22883759/what-is-the-difference-between-application-state-and-component-local-state-in-cl) - Data that is used within the context of a single component
+* [The Reducer Pattern](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow) - A design pattern for managing and modularizing out application state.
+* [useReducer Hook](https://www.geeksforgeeks.org/reactjs-usereducer-hook/) - A hook used to connect reducers and state to a React component
+* [What does dispatch do?](https://dev.to/dustinmyers/what-even-is-a-dispatch-function-27ma) - Awesome article by our own @Dustin Myers on the inner workings of dispatch
+
+## Key Terminology:
+* [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) - a javascript keyword used to streamline complex if else logic
+* [action](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow) - a single piece of data manipulation in a reducer pattern
+* [reducer](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow) - a pure, predictable immutable function that executes action on state data
+* [immutability](https://www.youtube.com/watch?v=5qQQ3yzbKp8) - an object or variable that can not be modified (and thus should only be copied)
+* [pure functions](https://www.youtube.com/watch?v=dZ41D6LDSBg) - a pure, predictable immutable function that executes action on state data
+
+## Notes
 Reducer functions take two arguments – the current state and action – and return a new, updated state object based on both arguments.
 ```javascript
 const initialState = { count: 0 }
@@ -51,35 +71,21 @@ Alternatively, employ the `useReducer` hook to manage state in a component if yo
 `dispatch` will "dispatch" an action to the reducer when specific events occur in the application. Dispatch lets you combine the reducer function with the ability to **maintain state at the level of the component.**
 ```javascript
 // Return JSX that displays the count for the user
-// Note the two button elements which allow the user to increase and decrease the count.  Each of them contains an onClick event that dispatches the desired action object, with its given type.  Each action, when fired, is dispatched to the reducer and the appropriate logic is applied.
+/* Note the two button elements which allow the user to increase and decrease the count. 
+Each of them contains an onClick event that dispatches the desired action object, with its
+given type.  Each action, when fired, is dispatched to the reducer and the appropriate logic
+is applied.*/
 return (
 <>
-    {/* Note, we have access to the current state and the dispatch method from the useReducer hook, so we can utilize them to display the count as well as couple the dispatching of the actions from the appropriate buttons.*/}
+    {/* Note, we have access to the current state and the dispatch method from the useReducer hook,
+    so we can utilize them to display the count as well as couple the dispatching of the actions
+    from the appropriate buttons.*/}
     <div className="count">Count: {state.count}</div>
     <button onClick={() => dispatch({ type: 'INCREASE' })}>+1</button>
     <button onClick={() => dispatch({ type: 'DECREASE' })}>-1</button>
 </>
 )
 ```
-
-## Links
-* 🎥 [GP](https://youtu.be/O2fhyPyyJBo)
-* 📝 [MP](https://github.com/nora-exe/web-module-project-reducer/tree/nora-corser)
-
-## Key Concepts:
-* [Business Logic](https://simplicable.com/new/business-logic) - The outline of the data and types of manipulations of data needed to create a working application
-* [Application State](https://www.youtube.com/watch?v=7ilYJAG-_Ug) - Data that is used across all of our application's components.
-* [Component State](https://stackoverflow.com/questions/22883759/what-is-the-difference-between-application-state-and-component-local-state-in-cl) - Data that is used within the context of a single component
-* [The Reducer Pattern](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow) - A design pattern for managing and modularizing out application state.
-* [useReducer Hook](https://www.geeksforgeeks.org/reactjs-usereducer-hook/) - A hook used to connect reducers and state to a React component
-* [What does dispatch do?](https://dev.to/dustinmyers/what-even-is-a-dispatch-function-27ma) - Awesome article by our own @Dustin Myers on the inner workings of dispatch
-
-## Key Terminology:
-* [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) - a javascript keyword used to streamline complex if else logic
-* [action](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow) - a single piece of data manipulation in a reducer pattern
-* [reducer](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow) - a pure, predictable immutable function that executes action on state data
-* [immutability](https://www.youtube.com/watch?v=5qQQ3yzbKp8) - an object or variable that can not be modified (and thus should only be copied)
-* [pure functions](https://www.youtube.com/watch?v=dZ41D6LDSBg) - a pure, predictable immutable function that executes action on state data
 
 # The Reducer Pattern Module Project: The Calculator
 

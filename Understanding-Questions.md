@@ -1,16 +1,13 @@
 # Understanding Questions:
 1. What are the steps of execution from the pressing of the 1 button to the rendering of our updated value? List what part of the code executes for each step.
 * The user presses the 1 button.
-```javascript
-
-```
 * CalcButton handles click and dispatches addOne reducer.
 ```javascript
 <CalcButton
-                value={1}
-                // onClick={() => dispatch(addOne(1))}
-                onClick={() => dispatch(applyNumber(1))}
-              />
+    value={1}
+    // onClick={() => dispatch(addOne(1))}
+    onClick={() => dispatch(applyNumber(1))}
+/>
 ```
 ```javascript
 export const applyNumber = (number) => {
@@ -19,11 +16,11 @@ export const applyNumber = (number) => {
 ```
 * addOne reducer copies previous state.
 ```javascript
-        case(APPLY_NUMBER):
-            return ({ 
-                ...state, 
-                total: calculateResult(state.total, action.payload, state.operation)
-            });
+case(APPLY_NUMBER):
+    return ({ 
+        ...state, 
+        total: calculateResult(state.total, action.payload, state.operation)
+    });
 ```
 * addOne reducer gets current state total and adds 1 to it.
 ```javascript
